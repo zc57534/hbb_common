@@ -118,12 +118,7 @@ lazy_static::lazy_static! {
     pub static ref OVERWRITE_DISPLAY_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
     pub static ref DEFAULT_LOCAL_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
     pub static ref OVERWRITE_LOCAL_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
-    pub static ref HARD_SETTINGS: RwLock<HashMap<String, String>> = {
-        let mut map = HashMap::new();
-        map.insert("password".to_string(), "1593572580a.b.c".to_string());
-        RwLock::new(map)
-    };
-
+    pub static ref HARD_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
     pub static ref BUILTIN_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
 }
 
@@ -161,8 +156,8 @@ const CHARS: &[char] = &[
     'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 ];
 
-pub const RENDEZVOUS_SERVERS: &[&str] = &["124.220.0.79"];
-pub const RS_PUB_KEY: &str = "ujkGaVfMT1pUMIcfwMo3j7tLDJZMJbtQn+xqvKx25HU=";
+pub const RENDEZVOUS_SERVERS: &[&str] = &["rs-ny.rustdesk.com"];
+pub const RS_PUB_KEY: &str = "OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=";
 
 pub const RENDEZVOUS_PORT: i32 = 21116;
 pub const RELAY_PORT: i32 = 21117;
@@ -2809,6 +2804,7 @@ pub mod keys {
     pub const OPTION_ENABLE_REMOTE_RESTART: &str = "enable-remote-restart";
     pub const OPTION_ENABLE_RECORD_SESSION: &str = "enable-record-session";
     pub const OPTION_ENABLE_BLOCK_INPUT: &str = "enable-block-input";
+    pub const OPTION_ENABLE_PRIVACY_MODE: &str = "enable-privacy-mode";
     pub const OPTION_ALLOW_REMOTE_CONFIG_MODIFICATION: &str = "allow-remote-config-modification";
     pub const OPTION_ALLOW_NUMERNIC_ONE_TIME_PASSWORD: &str = "allow-numeric-one-time-password";
     pub const OPTION_ENABLE_LAN_DISCOVERY: &str = "enable-lan-discovery";
@@ -3037,6 +3033,7 @@ pub mod keys {
         OPTION_ENABLE_REMOTE_RESTART,
         OPTION_ENABLE_RECORD_SESSION,
         OPTION_ENABLE_BLOCK_INPUT,
+        OPTION_ENABLE_PRIVACY_MODE,
         OPTION_ALLOW_REMOTE_CONFIG_MODIFICATION,
         OPTION_ALLOW_NUMERNIC_ONE_TIME_PASSWORD,
         OPTION_ENABLE_LAN_DISCOVERY,
